@@ -1,4 +1,4 @@
-![](./media/background-logo.png)
+[![](./media/background-logo.png)](#)
 
 ## Who are we?
 We are a small team of indie developers who frequently do game jams!
@@ -16,4 +16,4 @@ We are a small team of indie developers who frequently do game jams!
 	<a href="https://jawdandev.itch.io/sushi-roii"><img src="https://img.itch.zone/aW1nLzEyNTE2MTkxLnBuZw==/180x143%23c/1WBkil.png"></a>
 </div>
 
-![](./media/background-banner.png)
+[![](./media/background-banner.png)](#)
