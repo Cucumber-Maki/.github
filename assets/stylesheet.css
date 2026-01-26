@@ -1,0 +1,222 @@
+* {
+	font-family: monospace;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@font-face {
+	font-family: 'Maki';
+	src: url('maki.ttf');
+	/* size-adjust: 100%; */
+	/* line-gap-override: 50%; */
+	ascent-override: 100%;
+	/* descent-override: 10%; */
+	/* font-size-adjust:  ex-height 0.5; */
+}
+
+body {
+	color: white;
+	background-image: url("background.png");
+	background-position: center;
+	background-repeat: repeat;
+	margin: 0;
+
+	padding-bottom: 100px;
+}
+
+column {
+	display: block;
+	max-width: 1200px;
+	box-shadow: 0px 0px 20px #191d2a;
+	margin: auto;
+	border-radius: 20px;
+	overflow: hidden;
+}
+
+section {
+	scroll-margin-top: 40px;
+	background-color: transparent;
+	--p: 50px;
+	padding: calc(10px + var(--p)) 40px;
+	clip-path: polygon(0 var(--p), 0 100%, 100% calc(100% - var(--p)), 100% 0);
+
+	text-align: center;
+
+	&:nth-child(even) {
+		clip-path: polygon(0 0, 0 calc(100% - var(--p)), 100% 100%, 100% var(--p));
+	}
+}
+
+h1,
+h2 {
+	font-family: 'Maki';
+	font-weight: 100;
+	font-size: 2em;
+
+}
+@media (min-width: 600px) {
+	h1 {
+		font-size: 4em;
+	}
+}
+
+p {
+	font-size: 1.5em
+}
+
+
+hr {
+	border: 1px solid white;
+}
+
+a {
+	display: inline-block;
+	color: white;
+	font-weight: bold;
+
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+
+	&.button {
+		border: 2px solid white;
+		border-radius: 32px;
+		transition-duration: 0.1s;
+		padding: 8px 10px;
+		margin: 4px 4px;
+
+		font-weight: 100;
+
+		&:hover {
+			box-shadow: 4px 4px 0px 0px white;
+			transform: translateX(-4px) translateY(-4px);
+		}
+	}
+}
+
+.ArrowDown {
+	display: block;
+	margin: auto;
+	background-color: rgba(255, 255, 255, 0.9);
+	clip-path: polygon(0 0, 50% 100%, 100% 0);
+	width: 160px;
+	height: 60px;
+
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-name: anim;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes anim {
+	to {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+}
+
+.center {
+	width: fit-content;
+	margin: 0 auto;
+}
+
+
+#Title {
+	height: 100vh;
+	position: static;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	&>#Nav {
+		align-items: center;
+		margin: auto;
+		border-radius: 40px;
+		width: fit-content;
+
+		& div {
+			margin-left: auto;
+			margin-right: 0;
+			width: fit-content;
+		}
+	}
+
+	& .Button {
+		background-color: rgb(41, 48, 67);
+	}
+
+	&>.ArrowDown {
+		margin: 5px;
+	}
+}
+
+section {
+	&#About {
+		background-color: rgba(249, 172, 80, 0.8);
+	}
+
+	&#Games {
+		background-color: rgba(165, 216, 85, 0.8);
+	}
+
+	&#Contact {
+		background-color: rgb(141, 95, 124, 0.8);
+	}
+}
+
+#GameList {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-evenly;
+	gap: 8px;
+
+	& iframe {
+		/* padding: 10px; */
+		box-shadow: 0px 0px 10px inset #293043;
+		border-radius: 12px;
+	}
+}
+
+.Profiles {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+
+	margin: 30px 0px;
+
+	& a {
+		display: block;
+		border-radius: 20px;
+		/* background-color: rgba(249, 172, 80, 1.0); */
+		padding: 20px;
+		transition-duration: 0.2s;
+
+		& img {
+			display: block;
+			margin: 0px auto;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			padding: 5px;
+			object-fit: cover;
+		}
+
+		& p {
+			font-family: 'Maki';
+			font-weight: 100;
+			text-align: center;
+		}
+
+		&:hover {
+			transform: scale(1.2);
+			/* padding: 3px; */
+			/* border: 2px solid white; */
+		}
+	}
+}
